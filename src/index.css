@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid red; */
+     /* border: 1px solid red;  */
 }
 
 body{
@@ -24,6 +24,7 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
+    grid-column: 2 /3;
 }
 
 span.first{
@@ -52,11 +53,19 @@ input::placeholder{
 input:focus {
     outline: none;
 }
+.body{
+    display: grid;
+    grid-template-columns: minmax(2px, 1fr) minmax(min-content, 45rem)  minmax(2px, 1fr);
+}
 .container{
+    grid-column: 2/3;
     display: flex;
+    height: calc(100vh - 20px);
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    background-color: #00000044;
+    margin: 10px;
+    border-radius: 50px;
 }
 
 .main{
@@ -64,16 +73,20 @@ input:focus {
     text-shadow: 2px 2px 2px grey;
     display: flex;
     flex-direction: column;
+    grid-column: 2 /4;
 }
 
 .main p:nth-child(1){
     font-size: 2rem;
-    
+    position: relative;
+    left: 50px
 }
 
 .main p:nth-child(2){
     font-size: 3rem;
     font-weight: 1000;
+    position: relative;
+    left: 50px
 }
 
 .main p:nth-child(3){
@@ -84,6 +97,9 @@ input:focus {
     background-color: #00000055;
     border-radius: 10px 10px 0 0;
     padding: 10px;
+    position: relative;
+    right: 10px;
+    top: -110px
 }
 
 .footer{
@@ -95,6 +111,7 @@ input:focus {
     width:80%;
     padding: 20px;
     border-radius: 15px;
+    grid-column: 2 /3;
 }
 
 .footer div p:nth-child(1){

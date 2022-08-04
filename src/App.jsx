@@ -18,8 +18,8 @@ const App = () => {
           setData={setData}
           setInitial={setInitial}
         />
-        {!initial ? <Main data={data} /> : null}
-        {!initial ? <Footer data={data} /> : null}
+        {!initial && <Main data={data} />}
+        {!initial && <Footer data={data} />}
       </div>
     </div>
   );
