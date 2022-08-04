@@ -16,7 +16,10 @@ const Search = ({ setLocation, location, setData, setInitial }) => {
         setInitial(false);
         setCityExists(true);
       })
-      .catch(setCityExists(false));
+      .catch(() => {
+        setCityExists(false);
+        setInitial(true);
+      });
   };
 
   return (
