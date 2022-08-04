@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 const App = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
+  const [initial, setInitial] = useState(true);
 
   return (
     <div className="body">
@@ -15,9 +16,10 @@ const App = () => {
           location={location}
           setLocation={setLocation}
           setData={setData}
+          setInitial={setInitial}
         />
-        <Main data={data} />
-        <Footer data={data} />
+        {!initial ? <Main data={data} /> : null}
+        {!initial ? <Footer data={data} /> : null}
       </div>
     </div>
   );
